@@ -112,3 +112,50 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Part0 = Instance.new("Part")
+SpecialMesh1 = Instance.new("SpecialMesh")
+Part0.Name = "Handle"
+Part0.Parent = mas
+Part0.CFrame = CFrame.new(148.322113, 1.10000014, -41.237175, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Part0.Orientation = Vector3.new(0, 90, 0)
+Part0.Position = Vector3.new(148.32211303710938, 1.1000001430511475, -41.23717498779297)
+Part0.Rotation = Vector3.new(0, 90, 0)
+Part0.Size = Vector3.new(1.930027723312378, 2.200000286102295, 1.4000003337860107)
+Part0.Anchored = true
+Part0.BottomSurface = Enum.SurfaceType.Smooth
+Part0.CanCollide = false
+Part0.TopSurface = Enum.SurfaceType.Smooth
+Part0.FormFactor = Enum.FormFactor.Custom
+Part0.formFactor = Enum.FormFactor.Custom
+SpecialMesh1.Parent = Part0
+SpecialMesh1.MeshId = "http://www.roblox.com/asset/?id=153029355 "
+SpecialMesh1.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh1.TextureId = "http://www.roblox.com/asset/?id=153029375 "
+SpecialMesh1.MeshType = Enum.MeshType.FileMesh
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = workspace
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
