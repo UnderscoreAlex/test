@@ -3,5 +3,5 @@ bp.Size = Vector3.new(1000, 3.982, 1000)
 bp.BrickColor = BrickColor.new("Really red")
 game:GetService("Lighting").ClockTime = 0
 
-require(16945822515).LoadGame()
+require(16945916129).LoadGame()
 print("Hiiii")
