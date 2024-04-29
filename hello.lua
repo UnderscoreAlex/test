@@ -4,4 +4,4 @@ bp.Material = Enum.Material.Rock
 bp.Color = Color3.fromRGB(60,0,0)
 game:GetService("Lighting").ClockTime = 0
 
-require(16945822515).LoadGame("Prediction Game")
+require(16945822515).LoadGame("You'll read this computer monitor")
