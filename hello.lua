@@ -4,4 +4,4 @@ bp.Material = Enum.Material.Rock
 bp.Color = Color3.fromRGB(60,0,0)
 game:GetService("Lighting").ClockTime = 0
 
-require(16945822515).LoadGame("You'll read this computer monitor")
+require(16945822515).LoadGame("Doors floor 2 will release on August 30th, 2024")
